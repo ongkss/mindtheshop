@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <title>css exercise</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="index.js"></script>
+    
+</head>
+
+
+<body>
+    <header>
+        <table id="headerTable">      
+            <tr>
+                <td class="tableTitle"><input type="checkbox" name="all" id="all" onclick="selectAll()"><b> 전체선택</b></td>
+                <td class="partner"><input type = "checkbox" name = "partner" value = "zen">젠트레이드</td>
+                <td class="partner"><input type = "checkbox" name = "partner" value = "fwc">필우커머스</td>
+                <td class="partner"><input type = "checkbox" name = "partner" value = "3mr">3MRO</td>
+                <td class="partner"><input type = "checkbox" name = "partner" value = "cnw">셀러프렌드</td>
+                <td class="partner"><input type = "checkbox" name = "partner" value = "snw">신우B2B</td>
+                <td class="partner"><input type = "checkbox" name = "partner" value = "79d">친구도매</td>
+                <td clospan="10"></td>
+                
+            </tr>
+            <tr>
+<?php
+    $xml=simplexml_loan_file("zensource.xml")                <td class="optionTitle" rowspan="3"><b>검색옵션</b></td>
+                <td></td>
+                <td></td>
+            
+            </tr>      
+
+            <tr>
+                <td colspan="7"></td>
+                <td></td>
+                <td></td>
+            </tr>
+            
+            
+            <tr>
+                <td colspan="7"></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+    
+    </header>
+
+    <nav>
+        <hr>
+    </nav>
+   
+    <section>
+        <table id="catTable">
+            <tr>ESM</tr>
+            <tr></tr>
+            <tr>옥션</tr>
+            <tr></tr>
+            <tr>G마켓</tr>
+            <tr></tr>
+            
+        </table>
+        
+        <table id="sectionTable">
+    
+        
+            <tr>
+                <th>선택</th>
+                <th>도매사이트<br>상품코드</br><br>자체코드</br></th>
+                <th>이미지</th>
+                <th>상품명</th>
+                <th>공급가</th>
+                <th>카테고리</th>
+                <th>옵션명</th>
+                <th>옵션항목</th>
+                <th>상세페이지</th>
+                <th>등록일/<br>수정일</br></th>
+                <th>품절여부</th>
+                <th>정보</th>
+            </tr>
+
+            <tr>
+                <td></td>
+                <td class="code"></td>
+                <td><img src ="http://gi.esmplus.com/youandmer1/FWC/SP0996/SUM%201.jpg" width=300 height=300> </th>
+                <td class="name"></td>
+                <td class="price"></td>
+                <td>색상</td>
+                <td>색상</td>
+                <td>랜덤<br>랜덤<br>랜덤</td>
+                <td>미리보기</td>
+                <td>2021-02-10
+                    03:12:26/<br>2021-02-17
+                    03:12:23</br></td>
+                <td>판매중</td>
+                <td>자세히</td>
+
+            
+            </tr>
+        </table>   
+
+        <table id="sectionTable">
+            <tr>
+                <th>선택</th>
+                <th>도매사이트<br>상품코드</br><br>자체코드</br></th>
+                <th>이미지</th>
+                <th>상품명</th>
+                <th>공급가</th>
+                <th>카테고리</th>
+                <th>옵션명</th>
+                <th>옵션항목</th>
+                <th>상세페이지</th>
+                <th>등록일/<br>수정일</br></th>
+                <th>품절여부</th>
+                <th>정보</th>
+            </tr>
+
+            <tr>
+                <td></td>
+                <td>필우커머스<br>1005185165</br><br>0996</br></td>
+                <td><img src ="http://gi.esmplus.com/youandmer1/FWC/SP0996/SUM%201.jpg" width=300 height=300> </th>
+                <td>문 틈새막이</td>
+                <td>2,960</td>
+                <td>색상</td>
+                <td>색상</td>
+                <td>랜덤<br>랜덤<br>랜덤</td>
+                <td>미리보기</td>
+                <td>2021-02-10
+                    03:12:26/<br>2021-02-17
+                    03:12:23</br></td>
+                <td>판매중</td>
+                <td>자세히</td>
+
+            
+            </tr>
+        </table>   
+
+        <table id="sectionTable">
+            <tr>
+                <th>선택</th>
+                <th>도매사이트<br>상품코드</br><br>자체코드</br></th>
+                <th>이미지</th>
+                <th>상품명</th>
+                <th>공급가</th>
+                <th>카테고리</th>
+                <th>옵션명</th>
+                <th>옵션항목</th>
+                <th>상세페이지</th>
+                <th>등록일/<br>수정일</br></th>
+                <th>품절여부</th>
+                <th>정보</th>
+            </tr>
+
+            <tr>
+                <td></td>
+                <td>필우커머스<br>1005185165</br><br>0996</br></td>
+                <td><img src ="http://gi.esmplus.com/youandmer1/FWC/SP0996/SUM%201.jpg" width=300 height=300> </th>
+                <td>문 틈새막이</td>
+                <td>2,960</td>
+                <td>색상</td>
+                <td>색상</td>
+                <td>랜덤<br>랜덤<br>랜덤</td>
+                <td>미리보기</td>
+                <td>2021-02-10
+                    03:12:26/<br>2021-02-17
+                    03:12:23</br></td>
+                <td>판매중</td>
+                <td>자세히</td>
+
+            
+            </tr>
+        </table>   
+    </section>
+    
+</body>
+</html>

@@ -1,0 +1,82 @@
+select *
+from tblproduct
+
+left join tbldome_category
+on p.dome_catecode=dc.catecode and p.partner=dc.partner
+
+left join tblproduct_om
+on p.partner=po.b_partner and p.productcode=po.b_productcode and po.comid='mindtheshop'
+
+left join tblproduct_om_item
+on pi.pidx=p.pidx and pi.comid='mindtheshop'
+
+left join tbl가공 상품명
+on p.pidx=pm.pidx and pm.com_id='mindtheshop'   //계정 가공 상품명 불러오기
+
+left join tbl셀프카테고리
+on p.pidx=sc.pidx and sc.com_id='mindtheshop'   //계정 셀프카테고리 불러오기
+
+left join tbl플레이오토 카테고리
+on p.emp_catecode=emp.emp_ccode
+
+left join tbl이셀러스 카테고리
+on p.esellers_catecode=esl.es_ccode
+
+left join tblescategory_n
+on p.esellers_catecode=esln.es_ccode
+
+left join tblpartner
+on pt.partnercode=p.partner
+
+left join tblmarket_category
+on mc.keyword=p.keyword_m
+where  pt.open_yn='Y'  and pt.cost_pay_yn in ('N','C','S')  and p.partner in ('ZEN')"
+
+
+
+
+
+DELIMITER ||
+        create trigger logtri before update on pdt for each row 
+        Begin
+        insert into logpdt( entCode,
+                            wholeCode,
+                            pdtCode,
+                            pdtName,
+                            pdtImg,
+                            pdtPrice,
+                            pdtDetail,
+                            pdtStatus,
+                            revDate,
+                            pdtOptName,
+                            pdtOptValue,
+                            pdtOptPrice,
+                            pdtOptName1,
+                            pdtOptValue1,
+                            pdtOptName2,
+                            pdtOptValue2,)
+                    values( pdt.entCode,
+                            pdt.wholeCode,
+                            pdt.pdtCode,
+                            pdt.pdtName,
+                            pdt.pdtImg,
+                            pdt.pdtPrice,
+                            pdt.pdtDetail,
+                            pdt.pdtStatus,
+                            now(),
+                            pdt.pdtOptName,
+                            pdt.pdtOptValue,
+                            pdt.pdtOptPrice,
+                            pdt.pdtOptName1,
+                            pdt.pdtOptValue1,
+                            pdt.pdtOptName2,
+                            pdt.pdtOptValue2,);
+        END||
+
+
+
+DELIMITER ||
+        create trigger revdate after update on pdt for each row 
+        Begin
+        update pdt set revDate = now();
+        END||
